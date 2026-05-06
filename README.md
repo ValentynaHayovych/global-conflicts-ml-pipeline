@@ -14,30 +14,30 @@ The project also features data visualizations for comparison, an interactive map
 ## Project structure:
 
 global-conflicts-ml-pipeline/
-│
-├── config/                             # Structured country-level features covering independence year, population, GDP and geographical bounds
-│
-├── data/                            
-│   ├── processed/                      # Processed data with added data_validation and ml_models columns
-│   ├── raw/                            # Raw synthetic dataset
-│
-├── output/                               
-│   ├── analysis/                       # Visualized final evaluation with barcharts and matrixes
-│   ├── maps/                           # Interactive html map with DBSCAN anomaly points
-│   ├── ml/                             # ML models comparison visualisations
-│
-├── src/        
-│   ├── data_loading/                   # Ingestion scripts                         
-│   ├── data_validation/                # Fact checks and filtering based on coordinates          
-│   ├── ml_models/                      # Clustering + anomaly detection models   
-│   ├── ml_models_visuals/              # ML models visual comparison, including maps
-│   ├── overall_analysis/               # final evaluation           
-│
-├── README.md                           # Project overview and instructions
-├── LICENSE                             # License information for the repository
-├── .gitignore                          # Files and directories to be ignored by Git
-└── requirements.txt                    # Dependencies and requirements for the project
 
+config/                            # Structured country-level features covering independence year, population, GDP and geographical bounds
+
+data/                            
+── processed/                      # Processed data with added data_validation and ml_models columns
+── raw/                            # Raw synthetic dataset
+
+output/                               
+── analysis/                       # Visualized final evaluation with barcharts and matrixes
+── maps/                           # Interactive html map with DBSCAN anomaly points
+── ml/                             # ML models comparison visualisations
+
+src/        
+── data_loading/                   # Ingestion scripts                         
+── data_validation/                # Fact checks and filtering based on coordinates          
+── ml_models/                      # Clustering + anomaly detection models   
+── ml_models_visuals/              # ML models visual comparison, including maps
+── overall_analysis/               # final evaluation 
+
+── main.py                         # The main entry point of the project. Runs the full ML pipeline: data_loading -> data_validation -> ml_models -> ml_models_visuals -> overall_analysis        
+── README.md                       # Project overview and instructions   
+── requirements.txt                # Dependencies and requirements for the project           
+── LICENSE                         # License information for the repository   
+── .gitignore                      # Files and directories to be ignored by Git 
 
 ## Key Findings:
 
