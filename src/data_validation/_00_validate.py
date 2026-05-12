@@ -36,10 +36,10 @@ def validate_data(df):
 
     table = summary[['metric', 'valid_n', 'valid_%']]
 
-    print('Sum of validated dataset metrics:')
-    print('-'*50)
+    print('Sum of validated dataset metrics:'.center(60))
+    print('-'*60)
     print(table.to_string(index=False))
-    print('-'*50)
+    print('-'*60)
 
     return vdf
 

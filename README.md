@@ -22,6 +22,7 @@ This pipeline addresses three key questions:
 ## Setup & Usage
 1. Clone the repository
 2. Create virtual environment: `python -m venv .venv`
+3. Activate virtual environment: .venv\Scripts\activate
 3. Install dependencies: `pip install -r requirements.txt`
 4. Run the pipeline: `python main.py`
 
@@ -76,14 +77,19 @@ This pipeline addresses three key questions:
     │   │   _03_plots_dbscan_iso_coordinates_anomalies.py     # Comparison of DBSCAN vs Isolation Forest outliers 
     │   │   _04_plots_dbscan_mortality_clustering.py          # Visualization of DBSCAN clustering results
     │   └───_05_plots_dbscan_interactive_map.py               # Interactive folium map with DBSCAN analysis results
+    │                     
+    ├───overall_analysis                                      # Final evaluation 
+    │   │   _00_analysis.py                                   # Runner
+    │   │   _01_a_plots_war_initiator_won.py                  # Rank of countries that initiated conflict and won - raw and filtered data
+    │   │   _02_a_plots_war_defendor_lost.py                  # Rank of countries that were defenders and lost - raw and filtered data
+    │   │   _03_a_plots_war_involvement_dbscan.py             # Total war involvment - raw and filtered data
+    │   │   _04_a_final_data_validation.py                    # Matrix of all the data_validation results
+    │   └───_05_a_final_ml_data_validation.py                 # Matrix of all the ml_models results
     │           
-    └───overall_analysis/                                     # Final evaluation 
-        │   _00_analysis.py                                   # Runner
-        │   _01_a_plots_war_initiator_won.py                  # Rank of countries that initiated conflict and won - raw and filtered data
-        │   _02_a_plots_war_defendor_lost.py                  # Rank of countries that were defenders and lost - raw and filtered data
-        │   _03_a_plots_war_involvement_dbscan.py             # Total war involvment - raw and filtered data
-        │   _04_a_final_data_validation.py                    # Matrix of all the data_validation results
-        └───_05_a_final_ml_data_validation.py                 # Matrix of all the ml_models results
+    └───prediction_models
+        │   _00_prediction_models_evaluation.py               # Runner
+        │   _01_logistic_regression.py                        # Logistic Regression pipeline
+        └───_02_random_forest.py                              # Random Forest pipeline
 ```
 
 
@@ -106,6 +112,9 @@ globally extreme values, while Isolation Forest which consistently captures thos
 and the large number of detected outliers (112) reflects true structural properties of the dataset rather than model
 misconfiguration.
 - *output/ml/dbscan_clusters_map.html*: interactive Folium map enriched with DBSCAN-based noise filtering selected as the most stable and interpretable anomaly-detection approach for the synthetic dataset provided.
+
+### Prediction Models Training and Evaluation
+- *src/prediction_models/*: Models Logistic Regression and Random Forest were trained and evaluated on synthetic data. The models showed limited predictive capability between features and target, with performance remaining close to random chance (~50% accuracy) under the current feature representation.
 
 ### Overall analysis
 - Synthetic data quality is highly sensitive to rule-based validations *(output/analysis/final_data_validation.png)* which flag most records as invalid. For this reason, only land_only_coordinates_valid filtering was applied to the dataset *(src/data_validation/_06_conflict_coordinates_land_only.py)* before passing it to ML analysis.
