@@ -12,7 +12,10 @@ def train_logistic_regression(df):
     Returns:
     - model and name
     """
-    # Make comlumn output consistent with required type of output needed for binary analysis
+    
+    df = df.copy()
+    
+    # Make column output consistent with required type of output needed for binary analysis
     df['UN_Involvement'] = df['UN_Involvement'].map({
         'yes': 1,
         'no': 0,
@@ -39,25 +42,26 @@ def train_logistic_regression(df):
     # Logistic Regression pipeline
     pipeline = Pipeline([    
         ('preprocessor', preprocessor),
-        ('model', LogisticRegression(
+        ('classifier', LogisticRegression(
             max_iter=1000, 
-            class_weight = 'balanced'
+            class_weight = 'balanced' 
         ))
     ])
 
-    # Hyperparameter tuning - LR coefficients and solvers
-    params = {
-        'model__C': [0.01, 0.1, 1, 10],
-        'model__solver': ['lbfgs', 'saga']
+    # 8 parameter combinations
+    params = { 
+        'classifier__C': [0.01, 0.1, 1, 10], 
+        'classifier__solver': ['lbfgs', 'saga'] 
         }
     
-    model = GridSearchCV(
+    grid_search = GridSearchCV(
         pipeline, 
         params, 
-        cv=5, 
-        scoring='f1_weighted')
+        cv=5, # cross-validation folds
+        scoring='accuracy'
+        )
     
     return {
         'name': 'Logistic Regression',
-        'model': model
+        'model': grid_search
     }

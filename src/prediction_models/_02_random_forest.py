@@ -58,7 +58,7 @@ def train_random_forest(df):
         pipeline, 
         params, 
         cv=5,
-        scoring='f1_weighted'
+        scoring='accuracy'
         )
 
     return {

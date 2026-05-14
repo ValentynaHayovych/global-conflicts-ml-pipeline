@@ -33,6 +33,8 @@ def evaluate_prediction_models(df):
         y_pred = model.predict(X_test)
 
         print(f"{name}:".center(60))
+        print('Model best parameters:')
+        print(model.best_params_)
         print('-'*60)
         print(classification_report(y_test, y_pred))
         print('-'*60)
