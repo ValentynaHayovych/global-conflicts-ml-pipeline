@@ -96,7 +96,7 @@ This pipeline addresses three key questions:
 ## Key Findings:
 
 ### Data Quality Validation (Synthetic Dataset)
-- Year validation passed for 97.6% of records = synthetic years are realistic.
+- Year validation passed for 81.3% of records = synthetic years are realistic.
 - GDP and conflict coordinates validation failed for most records - synthetic values don't match real-world country data.
 - Land-based coordinate filter retained 36% of records.
 - Conflict type validation based on fact checks failed drastically with only 1.5% of valid data.
