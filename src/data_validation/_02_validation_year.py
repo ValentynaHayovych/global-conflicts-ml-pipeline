@@ -15,12 +15,12 @@ def year_validation(df, country_independence_year):
     def valid_year(row):
         valid_y_A = rule_year_check(row['Country_A'], row['Year'])
         valid_y_B = rule_year_check(row['Country_B'], row['Year'])
-        return 1 if (valid_y_A + valid_y_B) else 0
+        return 1 if (valid_y_A and valid_y_B) else 0
     
     df['Year_Valid'] = df.apply(valid_year, axis=1)
 
     return df
 
 # Year_Valid
-# 1    2928
-# 0     72
+# 1    2439
+# 0     561
