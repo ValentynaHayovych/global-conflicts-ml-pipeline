@@ -26,7 +26,7 @@ def war_defendor_lost(df, adf):
     pova = yeva[yeva['Population_Valid'] == 1] # added population filtering
 
     valid_counts = pova[pova['Outcome'] == 'Victory_A']['Country_B'].value_counts()
-    axes[1].bar(valid_counts.index, valid_counts.values, color = cmap(0.6))
+    axes[1].bar(valid_counts.index, valid_counts.values, color = cmap(4))
     axes[1].set_title('Defender losses (validated data)')
     axes[1].set_xlabel('Defender (Country_B)')
     axes[1].set_ylabel('Count')
