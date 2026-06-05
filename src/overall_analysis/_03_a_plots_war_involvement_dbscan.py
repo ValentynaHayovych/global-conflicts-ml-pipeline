@@ -34,11 +34,13 @@ def war_involvement(df, adf):
 
     fig, axes = plt.subplots(1, 2, figsize=(12,5))
 
-    axes[0].bar(war_involvement['Country'], war_involvement['War_Involvement'], color = '#ED1F4C')
+    cmap = plt.get_cmap('YlGnBu')
+
+    axes[0].bar(war_involvement['Country'], war_involvement['War_Involvement'], color = cmap(0.25))
     axes[0].set_title('Total war involvement per country')
     axes[0].tick_params(axis = 'x', rotation=45)
 
-    axes[1].bar(dbscan_anomalies['Country'], dbscan_anomalies['DBSCAN_Anomalies'], color = '#D117A6')
+    axes[1].bar(dbscan_anomalies['Country'], dbscan_anomalies['DBSCAN_Anomalies'], color = cmap(0.55))
     axes[1].set_title('Total approved war involvement (DBSCAN)')
     axes[1].tick_params(axis = 'x', rotation=45)
 
