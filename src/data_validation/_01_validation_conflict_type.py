@@ -10,7 +10,7 @@ def conflict_type_validation(df):
     - Conflict_Type_Valid: Binary indicator of whether the conflict type is valid (1) or not (0) for each row in the dataset.
     """
     
-    df['conflict_type_valid'] = 1
+    df['Conflict_Type_Valid'] = 1
     #Setup default value for conflict type validation column, as not every conflict type was included in fact_checks
     
     def fact_checks(row):
