@@ -125,7 +125,7 @@ ML models trained on insufficiently validated data produce results that appear p
 
 This project demonstrates a common failure in analytics workflows:
 
-> Applying machine learning to unvalidated data produces false confidence and unreliable conclusions.
+> Applying machine learning without validating data produces false confidence and unreliable conclusions.
 
 To address the issue, a structured approach applied to:
 
