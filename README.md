@@ -60,6 +60,7 @@ Python 3.12 · Pandas · Scikit-learn · Folium · Matplotlib · Seaborn · Geop
 
 [Project Structure Tree](docs/structure_tree.txt)
 
+---
 
 ## Project Flow
 
@@ -103,6 +104,7 @@ Compares:
 **Key Finding:**
 ML models trained on insufficiently validated data produce results that appear plausible but are statistically unreliable.
 
+---
 
 ## Results
 
@@ -131,6 +133,7 @@ It provides a structured approach to:
 * Compare validation vs ML-based anomaly detection
 * Understand when data is not suitable for predictive modeling
 
+---
 
 ## Setup & Usage
 
