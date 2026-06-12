@@ -1,11 +1,7 @@
-
-==================================================================
 # Global Conflicts ML Pipeline
-==================================================================
 
 Welcome to the **Global Conflicts ML Pipeline** repository!
 
----
 
 ## Project Overview
 
@@ -13,7 +9,6 @@ This project evaluates the reliability of geopolitical conflict data and demonst
 It combines rule-based validation, anomaly detection models, and geospatial analysis.
 The project features data visualizations for comparison, an interactive map built with Folium, and a final validation summary matrix.
 
----
 
 ## Business Context
 
@@ -21,7 +16,6 @@ Organizations frequently begin analytics or machine learning work before fully e
 A critical question to be answered:
 **Can this dataset be trusted for analytical or predictive use?**
 
----
 
 ## Key Insight
 
@@ -29,7 +23,6 @@ A critical question to be answered:
 
 This project shows that **data validation is not optional — it fundamentally changes analytical conclusions.**
 
----
 
 ## Pipeline Architecture
 <div align="center">
@@ -38,40 +31,39 @@ Raw synthetic dataset
 
 ↓
 
-VALIDATION  / / Conflict Type → Year → Population → GDP → Conflict Coordinates  / /
+VALIDATION → Conflict Type → Year → Population → GDP → Conflict Coordinates
 
 ↓
 
-ANOMALY DETECTION  / / Isolation Forest (ISO) + Local Outlier Factor (LOF) + DBSCAN  / /
+ANOMALY DETECTION → Isolation Forest (ISO) · Local Outlier Factor (LOF) · DBSCAN
 
 ↓
 
-PREDICTION MODELS / / Logistic Regression + Random Forest / /
+PREDICTION MODELS → Logistic Regression · Random Forest
 
 ↓
 
-ML VISUALIZATIONS / / ISO & LOF GDP Comparison + ISO & DBSCAN Map Coordinates Labeling + DBSCAN Clusters Statistics / /
+ML VISUALIZATIONS → ISO & LOF GDP Comparison · ISO & DBSCAN Map Coordinates Labeling · DBSCAN Clusters Statistics
 
 ↓
 
-FINAL EVALUATION / / Raw & Validated Data Statistics Comparison + Validation Matrix + Machine Learning Matrix / /
+FINAL EVALUATION → Raw & Validated Data Statistics Comparison · Validation Matrix · Machine Learning Matrix
 
 
 </div>
 
----
 
 ## Tech Stack
+
 Python 3.12 · Pandas · Scikit-learn · Folium · Matplotlib · Seaborn · Geopandas · Geodatasets
 
----
 
 ## Project structure:
+
 [Project Structure Tree](project_structure_tree.md)
 
----
 
-## Detailed results
+## Project Flow
 
 ### 1. Data Validation Layer
 
@@ -84,7 +76,6 @@ Applies rule-based checks using external country-level benchmarks:
 **Result:**
 Data quality assessment reduced trusted records by 98.5%, exposing significant data quality issues and demonstrates that conclusions drawn from the raw dataset would have been based primarily on invalid observations.
 
----
 
 ### 2. Anomaly Detection Layer
 
@@ -97,14 +88,12 @@ Applies multiple models to detect unusual patterns:
 **Observation:**
 Different models identify different types of anomalies, highlighting the importance of model selection depending on context.
 
----
 
 ### 3. Geospatial Analysis
 
 * Interactive map (Folium) visualizing DBSCAN clusters and outliers
 * Identifies spatial inconsistencies and unrealistic conflict locations
 
----
 
 ### 4. Comparative Analysis
 
@@ -116,7 +105,6 @@ Compares:
 **Key Finding:**
 ML models trained on insufficiently validated data produce results that appear plausible but are statistically unreliable.
 
----
 
 ## Results
 
@@ -132,13 +120,12 @@ ML models trained on insufficiently validated data produce results that appear p
 * Anomaly detection highlights structural inconsistencies in synthetic data
 * Predictive models (Logistic Regression, Random Forest) perform no better than random chance (~50% accuracy), indicating insufficient signal for reliable forecasting
 
----
 
 ## Why This Matters
 
 This project demonstrates a common failure in analytics workflows:
 
-**Applying machine learning without validating data leads to false confidence and incorrect conclusions.**
+> Applying machine learning without validating data leads to false confidence and incorrect conclusions.
 
 It provides a structured approach to:
 
@@ -146,9 +133,9 @@ It provides a structured approach to:
 * Compare validation vs ML-based anomaly detection
 * Understand when data is not suitable for predictive modeling
 
----
 
 ## Setup & Usage
+
 1. Clone the repository
 2. Create virtual environment inside the repository in terminal: `python -m venv .venv`
 3. Activate virtual environment: .venv\Scripts\activate
