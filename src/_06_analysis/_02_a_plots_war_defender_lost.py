@@ -1,14 +1,14 @@
 import matplotlib.pyplot as plt
 
 # War defender lost
-def war_defendor_lost(df, adf):
+def war_defender_lost(df, adf):
 
     """
     Function creates barcharts of countries that were the defenders and defeated
     with visual comparison between raw and filtered dataset, 
     included also Year_Valid and Population_Valid validations as filters.
     Returns:
-    - war_defendor_lost.png
+    - war_defender_lost.png
     """
 
     fig, axes = plt.subplots(1, 2, figsize=(12, 5))

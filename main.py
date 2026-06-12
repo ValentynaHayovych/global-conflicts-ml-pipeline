@@ -1,9 +1,10 @@
-from src.data_loading.load_data import load_data
-from src.data_validation._00_validate import validate_data
-from src.ml_models._00_ml_runner import anomaly_results
-from src.ml_models_visuals._00_plots_runner import visualizations
-from src.overall_analysis._00_analysis import analysis
-from src.prediction_models._00_prediction_models_evaluation import evaluate_prediction_models
+from src._01_data_loading.load_data import load_data
+from src._02_data_validation._00_validate import data_validation
+from src._03_anomaly_detection._00_ml_runner import anomaly_detection
+from src._04_classification._00_prediction_models_evaluation import evaluate_prediction_models
+from src._05_visualization._00_plots_runner import ml_visualizations
+from src._06_analysis._00_analysis import final_analysis
+
 
 
 def main():
@@ -15,10 +16,10 @@ def main():
     print('[INFO] Dataset loaded.')
     print(f"Dataset contains {len(df)} rows.\n")
 
-    vdf = validate_data(df)
+    vdf = data_validation(df)
     print('[INFO] Dataset validation completed.')
 
-    adf = anomaly_results(vdf)
+    adf = anomaly_detection(vdf)
     print('\n[INFO] Anomaly detection completed.\n')
 
     evaluate_prediction_models(adf)
@@ -27,10 +28,10 @@ def main():
     adf.to_csv('data/processed/global_conflicts_anomalies.csv', index=False)
     print('[INFO] Processed dataset saved.')
 
-    visualizations(adf) 
+    ml_visualizations(adf) 
     print('[INFO] Visualizations generated and saved to: outputs/.')
 
-    analysis(df, adf)
+    final_analysis(df, adf)
     print('[INFO] Analysis complete.')
 
     print("=" * 60)

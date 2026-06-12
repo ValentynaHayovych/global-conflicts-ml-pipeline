@@ -1,7 +1,7 @@
 from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
-from src.prediction_models._01_logistic_regression import train_logistic_regression
-from src.prediction_models._02_random_forest import train_random_forest
+from src._04_classification._01_logistic_regression import train_logistic_regression
+from src._04_classification._02_random_forest import train_random_forest
 
 def evaluate_prediction_models(df):
 
