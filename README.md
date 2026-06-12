@@ -25,32 +25,30 @@ This project shows that **data validation is not optional — it fundamentally c
 
 
 ## Pipeline Architecture
-<div align="center">
-
+```
 Raw synthetic dataset
 
-↓
+        ↓
 
-VALIDATION → Conflict Type → Year → Population → GDP → Conflict Coordinates
+DATA VALIDATION → Conflict Type → Year → Population → GDP → Conflict Coordinates
 
-↓
+        ↓
 
 ANOMALY DETECTION → Isolation Forest (ISO) · Local Outlier Factor (LOF) · DBSCAN
 
-↓
+        ↓
 
 PREDICTION MODELS → Logistic Regression · Random Forest
 
-↓
+        ↓
 
 ML VISUALIZATIONS → ISO & LOF GDP Comparison · ISO & DBSCAN Map Coordinates Labeling · DBSCAN Clusters Statistics
 
-↓
+        ↓
 
 FINAL EVALUATION → Raw & Validated Data Statistics Comparison · Validation Matrix · Machine Learning Matrix
 
-
-</div>
+```
 
 
 ## Tech Stack
