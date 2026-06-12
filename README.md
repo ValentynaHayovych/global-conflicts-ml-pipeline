@@ -58,7 +58,7 @@ Python 3.12 · Pandas · Scikit-learn · Folium · Matplotlib · Seaborn · Geop
 
 ## Project structure:
 
-[Project Structure Tree](project_structure_tree.txt)
+[Project Structure Tree](docs/structure_tree.txt)
 
 
 ## Project Flow
