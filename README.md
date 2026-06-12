@@ -42,7 +42,7 @@ PREDICTION MODELS → Logistic Regression · Random Forest
 
         ↓
 
-ML VISUALIZATIONS → ISO & LOF GDP Comparison · ISO & DBSCAN Map Coordinates Labeling · DBSCAN Clusters Statistics
+ML VISUALIZATIONS → ISO & LOF GDP Comparison · ISO & DBSCAN Map Coordinates Labeling · DBSCAN Clusters Statistics · DBSCAN Folium Map
 
         ↓
 
@@ -125,9 +125,9 @@ ML models trained on insufficiently validated data produce results that appear p
 
 This project demonstrates a common failure in analytics workflows:
 
-> Applying machine learning without validating data leads to false confidence and incorrect conclusions.
+> Applying machine learning to unvalidated data produces false confidence and unreliable conclusions.
 
-It provides a structured approach to:
+To address the issue, a structured approach applied to:
 
 * Assess dataset reliability
 * Compare validation vs ML-based anomaly detection
